@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/storage/var/www/html/developers/clemens/php/php-diff-master/lib/Diff'
+let g:netrw_dirhist_2='/storage/var/www/html/developers/clemens/core_data/php_libraries/trunk/www/configs'

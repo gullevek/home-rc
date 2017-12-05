@@ -1,0 +1,110 @@
+[core]
+	# if a user sets his own ignore file, the data in this file will be not used
+	excludesfile = /etc/gitignore
+	editor = /usr/bin/vim
+	pager = less -r
+[advice]
+	# hints in status page (like how to add/etc)
+	statusHints = false
+[push]
+	default = simple
+[diff]
+	mnemonicprefix = true
+	algorithm = patience
+[grep]
+	extendRegexp = true
+	lineNumber = true
+[status]
+#	showUntrackedFiles = all
+	submoduleSummary = true
+[color]
+	ui = true
+# https://www.kernel.org/pub/software/scm/git/docs/git-config.html
+# colors: normal, black, red, green, yellow, blue, magenta, cyan, white
+# valid: bold, dim, ul, blink, reverse, italic, strike
+[color "diff"]
+	meta = bold yellow
+	frag = bold blue
+	new = green
+	old = red
+	commit = magenta
+	whitespace = reverse red dim
+[color "branch"]
+	# plain
+	meta = reverse blue white
+	local = yellow
+	remote = green
+	upstream = magenta
+#	current = red
+[color "status"]
+	# unmerged
+	header = white
+	added = yellow
+	changed = red
+	untracked = cyan
+	branch = cyan
+	nobranch = bold yellow
+[color "grep"]
+	# context, function, linenumber, match, matchContext, matchSelected, selected, separator
+	filename = magenta
+[alias]
+	co = checkout
+	# add + commit in one step
+	ci = commit -a
+	# same as above with verbose
+	civ = commit -a -v
+	# commit shortcut
+	cm = commit
+	# commit verbose
+	cmv = commit -v
+	# shortcut for status
+	st = status
+	# add with verbose
+	ad = add -v
+	# last log message
+	last = log --date=iso --decorate --stat -1 HEAD
+	# detailed log (include log size)
+	ll = log --date=iso --decorate --graph --log-size
+	lla = log --date=iso --decorate --graph --log-size --all
+	# same, but with stats
+	lls = log --date=iso --decorate --graph --log-size --stat
+	llsa = log --date=iso --decorate --graph --log-size --stat --all
+	# short log (one line per log entry)
+	ls = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset | %<(80,trunc)%s %Cgreen(%cr)%Creset %C(bold blue)[%an]%Creset%C(yellow)%d%Creset' --graph --date=iso --decorate
+	lsa = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset | %<(80,trunc)%s %Cgreen(%cr)%Creset %C(bold blue)[%an]%Creset%C(yellow)%d%Creset' --graph --date=iso --decorate --all
+	# terse, but with commit file info
+	lsl = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset |%<(60,trunc)%s' --graph --date=iso --decorate --stat
+	lsla = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset |%<(60,trunc)%s' --graph --date=iso --decorate --stat --all
+	# log with changes
+	lp = log -p
+	# revert change before add [take file from commited and overwrite local file]
+	# revert command itself is already used
+	rvt = checkout --
+	# revert add [undo an add file]
+	# reset <file> is the shortcut for reset HEAD <file>
+	rst = reset --
+	unstage = reset HEAD --
+	# diff shortcut
+	df = diff
+	# diff to index (cached)
+	dc = diff --cached
+	# diff with word difference
+	dw = diff --word-diff
+	# diff with stat, shows quick difference (edited to index, before add)
+	ds = diff --stat
+	# diff stat cached: same, but to index (after add)
+	dsc = diff --stat --cached
+	# info -> remote verbose
+	info = remote -v
+	# new log entries since last pull/fetch
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	# stash pretty print
+	stashed = stash list --pretty=format:'%gd: %Cred%h%Creset %Cgreen[%ar]%Creset %s'
+	# unpushed commits (long)
+	unpushed = log --branches @{u}..
+	# unpushed short
+	upushed = log --branches --not --remotes --simplify-by-decoration --decorate --oneline
+	# From http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"

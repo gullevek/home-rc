@@ -1,0 +1,85 @@
+# enable scrollback, does not work in konsole
+#termcapinfo xterm|xterms|xs|rxvt ti@:te@
+defscrollback 50000
+
+#hardstatus alwayslastline "%{+b gk}[%H] [%n %t] [%l] [%h]%= [%D, %d.%m.%Y %c:%s]"
+#hardstatus alwayslastline "%{.kW}%-w%{.kR}%n %t%{-}%+w %=%{..G} %H: %l%{..Y} %d/%m %c"
+# %H: hostname, %S: shell name, %n: screen #, %t: screen title, %h: host/user/path, %l: load, %D, %y/%m/%d, %c:%s: day name, y/m/d, h:i:s
+hardstatus alwayslastline "%{.kw}[%{..g}%H%{..w}] [%{..M}%S%{..w}:%{..m}%n %{..M}%t%{..w}] [%{..W}%h%{..w}]%= %{..w}[%{..r}%l%{..w}][%{..y}%D, %y/%m/%d %{..Y}%c:%s%{..w}]"
+# simple (only active)
+#caption splitonly "%{.kw}%3n %t%{..w}"
+# # active + list
+caption splitonly "%{rw}%n%f %t %{wk} | %>%{wk}%?%-Lw%?[%{..M}%n*%f %t%{.kw}]%?(%u)%?%{wk}%?%+Lw%?%<"
+
+# if we want to log
+# logfile path/to/screen-output.%Y%m%d.log
+# logfile flush 1
+# logtstamp on
+# logtstamp after 5
+# log on
+# change log title
+# logtstamp string "-- %n:%t -- time-stamp -- %Y-%m-%d %0c:%s --\012"
+
+# ===========================================
+# CAPTION - shows a "caption" for the window.
+# ===========================================
+# a "caption" is another line which can show information -
+# in addition to the hardstatus line.
+#
+# use caption to show window list:
+# caption always "%{= kc}%?%-Lw%?%{= kY}%n*%f %t%?(%u)%?%{= kc}%?%+Lw%?"
+#
+# caption always '%{= wb}%50=%n%f %t%{= wb}'
+# this basically just shows the current window number and title
+# on its own; the "%50=" displays it in the middle of the line.
+
+# various window lists in formats
+#caption always "%>%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?%<"
+#caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+#caption always "%{kG}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kG}%?%+Lw%?"
+#caption always "%-Lw%{= BW}%51>%n%f* %t%{-}%+Lw%<"
+#caption always "%>%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?%<"
+# same as split only, but only with window list [use this with ^a :]
+#caption always "%>%{wk}%?%-Lw%?[%{..M}%n*%f %t%{.kw}]%?(%u)%?%{wk}%?%+Lw%?%<"
+
+# ===============================================================
+# "~" stands for the "bell" character
+# use %n to display the window number and %t for its title:
+activity              "activity in %f%n (%t) [%c:%s]~"
+
+# pass on the "beep" (CTRL-G) by adding a '~':
+bell                  "bell     in %f%n (%t) [%c:%s]~"
+
+# vbell_msg:            Message shown when the
+#                       "virtual bell" rings.
+vbell_msg             " *beep* "
+
+# next two lines activate multiple user attach to a screen and add root as an acl
+#multiuser on
+#acladd root
+
+# to be able to select screens n > 9 ->
+# press "C-a - #" instead of just "C-a #"
+bind - command -c select_1n
+bind -c select_1n 0 select 10
+bind -c select_1n 1 select 11
+bind -c select_1n 2 select 12
+bind -c select_1n 3 select 13
+bind -c select_1n 4 select 14
+bind -c select_1n 5 select 15
+bind -c select_1n 6 select 16
+bind -c select_1n 7 select 17
+bind -c select_1n 8 select 18
+bind -c select_1n 9 select 19
+bind -c select_1n - command -c select_2n
+bind -c select_2n 0 select 20
+bind -c select_2n 1 select 21
+bind -c select_2n 2 select 22
+bind -c select_2n 3 select 23
+bind -c select_2n 4 select 24
+bind -c select_2n 5 select 25
+bind -c select_2n 6 select 26
+bind -c select_2n 7 select 27
+bind -c select_2n 8 select 28
+bind -c select_2n 9 select 29
+bind -c select_2n - select -

@@ -1,0 +1,12 @@
+#[user]
+#	name = <user>
+#	email = <email>
+#[github]
+#	user = <user>
+#	token = <token>
+#[core]
+#	pager = less -rS
+#	excludesfile = /home/<user>/.gitignore_global
+[grep]
+	extendRegexp = true
+	lineNumber = true
