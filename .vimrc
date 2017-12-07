@@ -44,7 +44,7 @@ autocmd ColorScheme * highlight LineNr ctermfg=grey
 autocmd ColorScheme * highlight Search ctermfg=black ctermbg=yellow
 " highlight white spaces
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red
-" highlight white spaces at the end of a lien
+" highlight white spaces at the end of a line
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
@@ -59,14 +59,26 @@ let g:SignatureMarkTextHLDynamic=1
 "colorscheme desert
 "colorscheme badwolf
 colorscheme default
+"colorscheme afterglow
+"colorscheme Tomorrow
 
 "let g:airline_theme='sol'
-let g:airline_theme='light'
+"let g:airline_theme='light'
+let g:airline_theme='dark'
 "let g:airline_solarized_bg='dark'
 "let g:airline_tomorrow_bg='light'
 let g:airline_powerline_fonts=0
-"let g:airline#extensions#tabline#enabled=1
-" alternative fonts for airline status bar
+" alternative buffer/tab bar on top
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#tab_nr_type = 2
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#tab_min_count = 1
+let g:airline#extensions#tabline#left_sep = '▶'
+let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline#extensions#tabline#right_sep = '◀'
+let g:airline#extensions#tabline#right_alt_sep = '<'
+" more symbols definers for bottom line
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 if !exists('g:airline_symbols')
