@@ -33,6 +33,9 @@ set ttyfast " smoother changes
 set whichwrap=b,s,h,l,<,>,[,] " move freely between files
 " default listchars
 set listchars=tab:\→\ ,trail:▫︎,nbsp:•,eol:¶,extends:»,precedes:«
+" show break in no wrap lines
+"set showbreak=>\
+let &showbreak = '↳ '
 let g:bufferline_echo=0
 let g:bufferline_solo_highlight=1
 " line number column different
