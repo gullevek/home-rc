@@ -240,6 +240,17 @@ func! Cursorline_on_off()
 	return
 endfunc
 
+" turn on off no wrap break char
+map <F3> :call ShowBreak_on_off()<CR>
+func! ShowBreak_on_off()
+	if (&showbreak == '')
+		let &showbreak = '↳ '
+	else
+		let &showbreak = ''
+	endif
+	return
+endfunc
+
 " buffer left/right quick
 map ]b :bn<cr>
 map [b :bp<cr>
