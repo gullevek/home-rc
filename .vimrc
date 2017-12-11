@@ -31,6 +31,7 @@ set nolbr
 set ttyfast " smoother changes
 "set t_Co=256
 set whichwrap=b,s,h,l,<,>,[,] " move freely between files
+"set autoread " auto read file on change
 " default listchars
 set listchars=tab:\→\ ,trail:▫︎,nbsp:•,eol:¶,extends:»,precedes:«
 " show break in no wrap lines
@@ -66,8 +67,8 @@ colorscheme default
 "colorscheme Tomorrow
 
 "let g:airline_theme='sol'
-"let g:airline_theme='light'
-let g:airline_theme='dark'
+let g:airline_theme='light'
+"let g:airline_theme='dark'
 "let g:airline_solarized_bg='dark'
 "let g:airline_tomorrow_bg='light'
 let g:airline_powerline_fonts=0
@@ -250,6 +251,17 @@ func! ShowBreak_on_off()
 	endif
 	return
 endfunc
+
+" white space clean up function
+fun! TrimWhitespace()
+	let l:save = winsaveview()
+	%s/\s\+$//e
+	call winrestview(l:save)
+endfun
+" callwith :TrimWhitespace
+command! TrimWhitespace call TrimWhitespace()
+" and set command
+:noremap <Leader>w :call TrimWhitespace()<CR>
 
 " buffer left/right quick
 map ]b :bn<cr>
