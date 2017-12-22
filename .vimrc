@@ -27,10 +27,19 @@ set showmode
 set hlsearch
 set pastetoggle=<F11>
 set nolbr
+set formatoptions+=j
 "set cursorline " highlight cursor pos
 set ttyfast " smoother changes
 "set t_Co=256
 set whichwrap=b,s,h,l,<,>,[,] " move freely between files
+" keep selected visiual in motion
+vnoremap < <gv
+vnoremap > >gv
+" easymotion search set
+let g:EasyMotion_do_mapping = 0
+nmap s <Plug>(easymotion-overwin-f2)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 "set autoread " auto read file on change
 " default listchars
 set listchars=tab:\→\ ,trail:▫︎,nbsp:•,eol:¶,extends:»,precedes:«
