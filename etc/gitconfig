@@ -107,6 +107,12 @@
 	# From http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
-	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	# lower case is with -v for unassume, add s for skip work tree
+	assumed = "!git ls-files -v | grep ^[sh] | cut -c 3-"
+	# for skip work tree (S flag in ls-files)
+	skip = update-index --skip-worktree
+	unskip = update-index --no-skip-worktree
+	# small as if unassume set too
+	skipped = "!git ls-files -v | grep ^[Ss] | cut -c 3-"
 	# create a snapshot from the current working tree without removing the changes from the tree
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
