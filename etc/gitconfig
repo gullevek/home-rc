@@ -57,6 +57,10 @@
 	cm = commit
 	# commit verbose
 	cmv = commit -v
+	# commit with ammend
+	cma = commit --amend
+	# commit with ammend and verbose
+	cmav = commit --amend -v
 	# shortcut for status
 	st = status
 	# add with verbose
