@@ -131,3 +131,5 @@
 	mgd = merge development
 	# merge master (up)
 	mgm = merge master
+	# push to ALL remotes
+	pushall = !git remote | xargs -L1 git push --all
