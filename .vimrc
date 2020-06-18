@@ -69,11 +69,17 @@ autocmd BufWinLeave * call clearmatches()
 let g:NERDTreeMapMenu='M'
 let g:SignatureMarkTextHLDynamic=1
 
-"colorscheme desert
-"colorscheme badwolf
-colorscheme default
-"colorscheme afterglow
-"colorscheme Tomorrow
+if &diff
+	set t_Co=256
+	set background=dark
+	colorscheme peaksea
+else
+	"colorscheme desert
+	"colorscheme badwolf
+	colorscheme default
+	"colorscheme afterglow
+	"colorscheme Tomorrow
+endif
 
 "let g:airline_theme='sol'
 let g:airline_theme='light'
