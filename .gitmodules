@@ -1,3 +1,27 @@
 [submodule "dot-files/.bash-git-prompt"]
 	path = dot-files/.bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule "dot-files/.vim/bundle/nerdtree"]
+	path = dot-files/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "dot-files/.vim/bundle/nerdtree-git-plugin"]
+	path = dot-files/.vim/bundle/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "dot-files/.vim/bundle/vim-bufferline"]
+	path = dot-files/.vim/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline
+[submodule "dot-files/.vim/bundle/vim-gitgutter"]
+	path = dot-files/.vim/bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "dot-files/.vim/bundle/vim-fugitive"]
+	path = dot-files/.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "dot-files/.vim/bundle/vim-signature"]
+	path = dot-files/.vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
+[submodule "dot-files/.vim/bundle/vim-easymotion"]
+	path = dot-files/.vim/bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "dot-files/.vim/bundle/undotree"]
+	path = dot-files/.vim/bundle/undotree
+	url = https://github.com/mbbill/undotree.git
