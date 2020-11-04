@@ -1,6 +1,9 @@
 # home-rc
 $HOME settings
 
+dot-files: the actual . files
+etc: git global config files
+
 * vim
 NOTE: uses airline, which is installed from package in debian and not via plugin
 
