@@ -59,14 +59,20 @@
 	cmv = commit -v
 	# commit with ammend
 	cma = commit --amend
+	# commit +add with ammend
+	cmaa = commit -a --amend
 	# commit with ammend and verbose
 	cmav = commit --amend -v
+	# branch
+	br = branch
 	# shortcut for status
-	st = status
+	st = status --short --branch
 	# add with verbose
 	ad = add -v
 	# merge
 	mg = merge
+	# update (pull + rebase)
+	up = pull --rebase
 	# last log message
 	last = log --date=iso --decorate --stat -1 HEAD
 	# detailed log (include log size)
@@ -81,8 +87,8 @@
 	# terse, but with commit file info
 	lsl = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset |%<(60,trunc)%s' --graph --date=iso --decorate --stat
 	lsla = log --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset |%<(60,trunc)%s' --graph --date=iso --decorate --stat --all
-	# log with changes
-	lp = log -p
+	# log with changes (patch format)
+	lp = log -p --pretty=fuller --abbrev-commit
 	# revert change before add [take file from commited and overwrite local file]
 	# revert command itself is already used
 	rvt = checkout --
@@ -114,7 +120,7 @@
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	# lower case is with -v for unassume, add s for skip work tree
-	assumed = "!git ls-files -v | grep ^[sh] | cut -c 3-"
+	assumed = "!git ls-files -v | grep ^[hs] | cut -c 3-"
 	# for skip work tree (S flag in ls-files)
 	skip = update-index --skip-worktree
 	unskip = update-index --no-skip-worktree
