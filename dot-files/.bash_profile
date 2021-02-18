@@ -16,5 +16,3 @@ if [ -d ~/bin ] ; then
 fi
 
 export LANG=en_US.UTF-8
-
-function growl { echo -e $'\e]9;'${1}'\007' ; return ; }
