@@ -11,6 +11,7 @@
 [diff]
 	mnemonicprefix = true
 	algorithm = patience
+	colorMoved = default
 [grep]
 	extendRegexp = true
 	lineNumber = true
@@ -27,6 +28,8 @@
 	frag = bold blue
 	new = green
 	old = red
+	newMoved = green dim
+	oldMoved = red dim
 	commit = magenta
 	whitespace = reverse red dim
 [color "branch"]
