@@ -3,6 +3,8 @@
 	excludesfile = /etc/gitignore
 	editor = /usr/bin/vim
 	pager = less -r
+[init]
+	defaultBranch = master
 [advice]
 	# hints in status page (like how to add/etc)
 	statusHints = false
