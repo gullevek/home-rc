@@ -42,15 +42,15 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 xterm-color)
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     ;;
 *)
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w [\j]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\H:\w [\j]\$ '
     ;;
 esac
 
 # Comment in the above and uncomment this below for a color prompt
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -100,6 +100,6 @@ export EDITOR="vim"
 # GET: git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_LEADING_SPACE=0
-export GIT_PROMPT_START="[$yellow\t$NC][$GREEN\u$NC@$RED\h$NC:$BLUE\w$NC][$cyan\j$NC]{_LAST_COMMAND_INDICATOR_$ResetColor}"
+export GIT_PROMPT_START="[$yellow\t$NC][$GREEN\u$NC@$RED\H$NC:$BLUE\w$NC][$cyan\j$NC]{_LAST_COMMAND_INDICATOR_$ResetColor}"
 export GIT_PROMPT_END='\$ '
 source ~/.bash-git-prompt/gitprompt.sh
