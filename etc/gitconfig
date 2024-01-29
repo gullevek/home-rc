@@ -72,6 +72,12 @@
 	cmav = commit --amend -v
 	# branch
 	br = branch
+	# branches sort by last commit date
+	brc= branch --sort=committerdate
+	# remote branches
+	brw= branch -r
+	# all branches
+	bra = branch -a
 	# shortcut for status
 	st = status --short --branch
 	# add with verbose
