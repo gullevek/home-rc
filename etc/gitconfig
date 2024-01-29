@@ -75,7 +75,7 @@
 	# branches sort by last commit date
 	brc= branch --sort=committerdate
 	# remote branches
-	brw= branch -r
+	brr= branch -r
 	# all branches
 	bra = branch -a
 	# shortcut for status
