@@ -10,6 +10,8 @@
 	statusHints = false
 [push]
 	default = simple
+[pull]
+	rebase = false
 [diff]
 	mnemonicprefix = true
 	algorithm = patience
@@ -22,6 +24,8 @@
 	submoduleSummary = true
 [merge]
 	conflictStyle = diff3
+[rerere]
+	enabled = true
 [color]
 	ui = true
 # https://www.kernel.org/pub/software/scm/git/docs/git-config.html
