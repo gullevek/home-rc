@@ -14,7 +14,7 @@
 	rebase = false
 [diff]
 	mnemonicprefix = true
-	algorithm = patience
+	algorithm = histogram
 	colorMoved = default
 [grep]
 	extendRegexp = true
@@ -23,7 +23,7 @@
 #	showUntrackedFiles = all
 	submoduleSummary = true
 [merge]
-	conflictStyle = diff3
+	conflictStyle = zdiff3
 [rerere]
 	enabled = true
 [color]
