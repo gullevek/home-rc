@@ -16,6 +16,8 @@
 	mnemonicprefix = true
 	algorithm = histogram
 	colorMoved = default
+	colorMovedWS = allow-indentation-change
+	submodule = log
 [grep]
 	extendRegexp = true
 	lineNumber = true
@@ -75,13 +77,13 @@
 	# commit with ammend and verbose
 	cmav = commit --amend -v
 	# branch
-	br = branch
+	br = branch -vv
 	# branches sort by last commit date
-	brc= branch --sort=committerdate
+	brc= branch -vv --sort=committerdate
 	# remote branches
-	brr= branch -r
+	brr= branch -vv -r
 	# all branches
-	bra = branch -a
+	bra = branch -vv -a
 	# shortcut for status
 	st = status --short --branch
 	# add with verbose
@@ -156,3 +158,9 @@
 	mgm = merge master
 	# push to ALL remotes
 	pushall = !git remote | xargs -L1 git push --all
+	# list tags in proper order or | sort -V
+	tl = !git tag --list --sort=v:refname
+	tlr= !git tag --list --sort=-v:refname
+	# tag sort date
+	tld = tag --sort=taggerdate
+	tldr= tag --sort=-taggerdate
