@@ -164,3 +164,8 @@
 	# tag sort date
 	tld = tag --sort=taggerdate
 	tldr= tag --sort=-taggerdate
+	# submodule
+	sm = submodule 
+	smup = submodule update --remote
+	smst = submodule status
+	smsum = submodule summary
